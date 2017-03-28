@@ -14,7 +14,7 @@ public class CustomFontTextView extends android.support.v7.widget.AppCompatTextV
 
 
     public CustomFontTextView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public CustomFontTextView(Context context, @Nullable AttributeSet attrs) {
