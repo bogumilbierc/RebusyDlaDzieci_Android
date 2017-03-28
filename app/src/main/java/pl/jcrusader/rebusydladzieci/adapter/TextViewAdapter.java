@@ -1,6 +1,8 @@
 package pl.jcrusader.rebusydladzieci.adapter;
 
 import android.content.Context;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -40,10 +42,12 @@ public class TextViewAdapter extends BaseAdapter {
         CustomFontTextView textView;
         if (convertView == null) {
             textView = new CustomFontTextView(context);
-            textView.setText("test");
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
         } else {
             textView = (CustomFontTextView) convertView;
         }
+        textView.setText(String.format("%d", position + 1));
+        textView.setGravity(Gravity.CENTER);
         return textView;
     }
 }
