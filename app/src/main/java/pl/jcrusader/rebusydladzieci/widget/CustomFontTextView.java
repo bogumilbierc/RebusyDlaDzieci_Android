@@ -13,6 +13,10 @@ public class CustomFontTextView extends android.support.v7.widget.AppCompatTextV
             "http://schemas.android.com/apk/res-auto";
 
 
+    public CustomFontTextView(Context context) {
+        super(context);
+    }
+
     public CustomFontTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         if (isInEditMode()) {
