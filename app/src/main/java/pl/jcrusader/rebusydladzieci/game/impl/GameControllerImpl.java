@@ -13,6 +13,10 @@ public class GameControllerImpl implements GameController {
 
     private Context context;
 
+    private Integer currentImage = 001;
+    private String imagePrefix = "image";
+    private String extension = ".jpg";
+
     public GameControllerImpl(Context context) {
         this.context = context;
     }
