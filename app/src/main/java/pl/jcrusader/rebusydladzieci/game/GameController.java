@@ -10,4 +10,6 @@ public interface GameController {
     boolean checkAnswer(String userAnswer);
 
     Bitmap giveRiddle();
+
+    boolean riddleAvailable(Integer riddleNumber);
 }
