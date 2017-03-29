@@ -25,6 +25,12 @@ public class GameControllerImpl implements GameController {
     public GameControllerImpl(Context context) {
         this.context = context;
         this.localDataService = new LocalDataServiceImpl(context);
+        this.currentRiddle = localDataService.getHighestSolvedRiddleNumber();
+    }
+
+    public GameControllerImpl(Context context, Integer currentRiddle) {
+        this(context);
+        this.currentRiddle = currentRiddle;
     }
 
     @Override

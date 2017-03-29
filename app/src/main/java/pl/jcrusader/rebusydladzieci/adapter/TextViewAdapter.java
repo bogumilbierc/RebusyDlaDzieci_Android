@@ -1,6 +1,7 @@
 package pl.jcrusader.rebusydladzieci.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.util.TypedValue;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import pl.jcrusader.rebusydladzieci.GameActivity;
 import pl.jcrusader.rebusydladzieci.game.GameConstants;
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;
@@ -58,6 +60,32 @@ public class TextViewAdapter extends BaseAdapter {
             textView.setTextColor(ColorStateList.valueOf(Color.RED));
         }
         textView.setGravity(Gravity.CENTER);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                levelClicked((CustomFontTextView) v);
+            }
+        });
         return textView;
+    }
+
+    private void levelClicked(CustomFontTextView clickedView) {
+        String levelString = clickedView.getText().toString();
+        Integer level = Integer.valueOf(levelString);
+        if (gameController.isRiddleAvailable(level)) {
+            startLevel(level);
+        } else {
+            showLevelUnavailableWarning();
+        }
+    }
+
+    private void startLevel(Integer level) {
+        Intent intent = new Intent(context, GameActivity.class);
+        intent.putExtra(GameActivity.LEVEL_KEY, level);
+        context.startActivity(intent);
+    }
+
+    private void showLevelUnavailableWarning() {
+
     }
 }
