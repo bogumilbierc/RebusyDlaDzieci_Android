@@ -30,4 +30,11 @@ public interface GameController {
      * @return true if riddle should be available to the user, false otherwise
      */
     boolean isRiddleAvailable(Integer riddleNumber);
+
+    /**
+     * Checks whether all riddles are solved, so user can be notified about such fact.
+     *
+     * @return true if all riddles are solved, false otherwise
+     */
+    boolean areAllRiddlesSolved();
 }

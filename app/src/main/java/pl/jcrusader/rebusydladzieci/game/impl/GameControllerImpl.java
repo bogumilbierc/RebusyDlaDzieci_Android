@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import pl.jcrusader.rebusydladzieci.game.AnswersContainer;
+import pl.jcrusader.rebusydladzieci.game.GameConstants;
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.game.LocalDataService;
 
@@ -21,6 +22,7 @@ public class GameControllerImpl implements GameController {
     private Context context;
     private LocalDataService localDataService;
     private Integer currentRiddle;
+    private boolean allRiddlesSolved;
 
     public GameControllerImpl(Context context) {
         this.context = context;
@@ -37,8 +39,12 @@ public class GameControllerImpl implements GameController {
     public boolean submitAnswer(String userAnswer) {
         boolean isAnswerCorrect = userAnswer.equalsIgnoreCase(AnswersContainer.ANSWERS[currentRiddle]);
         if (isAnswerCorrect) {
-            currentRiddle++;
-            checkIfCurrentRiddleIsHighestAndSaveIfSo();
+            if (currentRiddle < GameConstants.MAX_LEVEL) {
+                currentRiddle++;
+                checkIfCurrentRiddleIsHighestAndSaveIfSo();
+            } else {
+                allRiddlesSolved = true;
+            }
         }
         return isAnswerCorrect;
     }
@@ -57,6 +63,11 @@ public class GameControllerImpl implements GameController {
     @Override
     public boolean isRiddleAvailable(Integer riddleNumber) {
         return localDataService.getHighestSolvedRiddleNumber() >= riddleNumber;
+    }
+
+    @Override
+    public boolean areAllRiddlesSolved() {
+        return allRiddlesSolved;
     }
 
     private void checkIfCurrentRiddleIsHighestAndSaveIfSo() {

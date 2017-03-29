@@ -18,6 +18,7 @@ public class GameActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private EditText answerEt;
+    private CustomFontTextView allRiddlesSolvedTv;
     private CustomFontTextView checkAnswerTv;
     private CustomFontTextView correctAnswerTv;
     private CustomFontTextView incorrectAnswerTv;
@@ -33,6 +34,7 @@ public class GameActivity extends AppCompatActivity {
         answerEt = (EditText) findViewById(R.id.answerEt);
         incorrectAnswerTv = (CustomFontTextView) findViewById(R.id.inCorrectAnswerTv);
         correctAnswerTv = (CustomFontTextView) findViewById(R.id.correctAnswerTv);
+        allRiddlesSolvedTv = (CustomFontTextView) findViewById(R.id.allRiddlesSolvedTv);
 
         checkAnswerTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +77,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void drawRiddle() {
-        imageView.setImageBitmap(gameController.getCurrentRiddleImage());
+        if (gameController.areAllRiddlesSolved()) {
+            hideAllControls();
+            showAllRiddlesSolvedView();
+        } else {
+            imageView.setImageBitmap(gameController.getCurrentRiddleImage());
+        }
     }
 
     private void submitAnswer() {
@@ -117,6 +124,10 @@ public class GameActivity extends AppCompatActivity {
 
     private void showBadAnswerView() {
         incorrectAnswerTv.setVisibility(View.VISIBLE);
+    }
+
+    private void showAllRiddlesSolvedView() {
+        allRiddlesSolvedTv.setVisibility(View.VISIBLE);
     }
 
 

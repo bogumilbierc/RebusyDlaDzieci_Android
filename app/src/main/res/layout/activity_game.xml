@@ -35,6 +35,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
+        android:id="@+id/allRiddlesSolvedTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text=":) \n mistrzunio \n wszystkie rebusy rozwiazane \n :)"
+        android:textColor="#00FF00"
+        android:textSize="35dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
