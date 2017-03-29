@@ -1,7 +1,9 @@
-package pl.jcrusader.rebusydladzieci;
+package pl.jcrusader.rebusydladzieci.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import pl.jcrusader.rebusydladzieci.R;
 
 public class OptionsActivity extends AppCompatActivity {
 

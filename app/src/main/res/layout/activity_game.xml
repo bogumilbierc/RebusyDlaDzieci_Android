@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context="pl.jcrusader.rebusydladzieci.GameActivity">
+    tools:context="pl.jcrusader.rebusydladzieci.activity.GameActivity">
 
     <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
         android:id="@+id/correctAnswerTv"

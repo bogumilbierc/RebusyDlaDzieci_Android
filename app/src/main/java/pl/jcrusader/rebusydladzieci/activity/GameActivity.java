@@ -1,4 +1,4 @@
-package pl.jcrusader.rebusydladzieci;
+package pl.jcrusader.rebusydladzieci.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import pl.jcrusader.rebusydladzieci.R;
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.game.impl.GameControllerImpl;
 import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;

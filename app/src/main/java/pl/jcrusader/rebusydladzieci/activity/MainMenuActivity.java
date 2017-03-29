@@ -1,4 +1,4 @@
-package pl.jcrusader.rebusydladzieci;
+package pl.jcrusader.rebusydladzieci.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import pl.jcrusader.rebusydladzieci.R;
 import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;
 
 public class MainMenuActivity extends AppCompatActivity {

@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import pl.jcrusader.rebusydladzieci.GameActivity;
+import pl.jcrusader.rebusydladzieci.activity.GameActivity;
 import pl.jcrusader.rebusydladzieci.game.GameConstants;
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;

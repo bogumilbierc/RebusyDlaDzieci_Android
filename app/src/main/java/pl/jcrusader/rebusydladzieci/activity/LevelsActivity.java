@@ -1,9 +1,10 @@
-package pl.jcrusader.rebusydladzieci;
+package pl.jcrusader.rebusydladzieci.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
 
+import pl.jcrusader.rebusydladzieci.R;
 import pl.jcrusader.rebusydladzieci.adapter.TextViewAdapter;
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.game.impl.GameControllerImpl;
