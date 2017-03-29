@@ -10,7 +10,7 @@ public interface LocalDataService {
     /**
      * Gets highest riddle number which was solved by user.
      *
-     * @return number of highest solved riddle or 1 if no such number is stored
+     * @return number of highest solved riddle or {@link GameConstants#MIN_LEVEL} if no such number is stored
      */
     Integer getHighestSolvedRiddleNumber();
 
@@ -20,7 +20,7 @@ public interface LocalDataService {
     void incrementHighestSolvedRiddleNumber();
 
     /**
-     * Resets highest riddle number solved by user (sets value to 1).
+     * Resets highest riddle number solved by user (sets value to {@link GameConstants#MIN_LEVEL}).
      */
     void resetHighestSolvedRiddleNumber();
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import pl.jcrusader.rebusydladzieci.R;
+import pl.jcrusader.rebusydladzieci.game.GameConstants;
 import pl.jcrusader.rebusydladzieci.game.LocalDataService;
 
 /**
@@ -22,7 +23,7 @@ public class LocalDataServiceImpl implements LocalDataService {
 
     @Override
     public Integer getHighestSolvedRiddleNumber() {
-        return getPreferences().getInt(RIDDLE_NUMBER_KEY, 1);
+        return getPreferences().getInt(RIDDLE_NUMBER_KEY, GameConstants.MIN_LEVEL);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class LocalDataServiceImpl implements LocalDataService {
     public void resetHighestSolvedRiddleNumber() {
         SharedPreferences sharedPreferences = getPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(RIDDLE_NUMBER_KEY, 1);
+        editor.putInt(RIDDLE_NUMBER_KEY, GameConstants.MIN_LEVEL);
         editor.commit();
     }
 
