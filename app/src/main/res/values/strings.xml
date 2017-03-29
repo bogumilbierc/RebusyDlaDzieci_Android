@@ -8,4 +8,5 @@
     <string name="levels">Poziomy</string>
     <string name="play">Graj</string>
     <string name="reset_levels_progres">wyzeruj poziomy</string>
+    <string name="level_unavailable_toast">Ten poziom nie jest jeszcze dostępny. Rozwiąż wcześniejsze rebusy aby uzyskać dostęp</string>
 </resources>

@@ -9,7 +9,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Toast;
 
+import pl.jcrusader.rebusydladzieci.R;
 import pl.jcrusader.rebusydladzieci.activity.GameActivity;
 import pl.jcrusader.rebusydladzieci.game.GameConstants;
 import pl.jcrusader.rebusydladzieci.game.GameController;
@@ -86,6 +88,8 @@ public class TextViewAdapter extends BaseAdapter {
     }
 
     private void showLevelUnavailableWarning() {
-
+        Toast
+                .makeText(context, R.string.level_unavailable_toast, Toast.LENGTH_LONG)
+                .show();
     }
 }
