@@ -21,13 +21,13 @@ public class LocalDataServiceImpl implements LocalDataService {
     }
 
     @Override
-    public Integer getCurrentRiddleNumber() {
+    public Integer getHighestSolvedRiddleNumber() {
         return getPreferences().getInt(RIDDLE_NUMBER_KEY, 1);
     }
 
     @Override
-    public void incrementCurrentRiddleNumber() {
-        Integer currentNumber = getCurrentRiddleNumber();
+    public void incrementHighestSolvedRiddleNumber() {
+        Integer currentNumber = getHighestSolvedRiddleNumber();
         SharedPreferences sharedPreferences = getPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(RIDDLE_NUMBER_KEY, currentNumber++);
@@ -35,7 +35,7 @@ public class LocalDataServiceImpl implements LocalDataService {
     }
 
     @Override
-    public void resetRiddleNumber() {
+    public void resetHighestSolvedRiddleNumber() {
         SharedPreferences sharedPreferences = getPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(RIDDLE_NUMBER_KEY, 1);

@@ -5,7 +5,7 @@ package pl.jcrusader.rebusydladzieci.game;
  */
 
 public class AnswersContainer {
-    public static String[] ANSWERS
+    public static final String[] ANSWERS
             =
             {
                     "",

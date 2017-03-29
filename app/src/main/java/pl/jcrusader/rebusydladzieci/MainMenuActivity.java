@@ -11,6 +11,7 @@ import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;
 public class MainMenuActivity extends AppCompatActivity {
 
     private TextView levelTv;
+    private TextView playTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +23,27 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void assignObjectsToViews() {
         levelTv = (CustomFontTextView) findViewById(R.id.levelsTextView);
+        playTv = (CustomFontTextView) findViewById(R.id.playTextView);
     }
 
     private void assignListeners() {
         levelTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this, LevelsActivity.class);
-                startActivity(intent);
+                createAndStartActivity(LevelsActivity.class);
             }
         });
+        playTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAndStartActivity(GameActivity.class);
+            }
+        });
+    }
+
+    private void createAndStartActivity(Class<?> cls) {
+        Intent intent = new Intent(MainMenuActivity.this, cls);
+        startActivity(intent);
     }
 
 

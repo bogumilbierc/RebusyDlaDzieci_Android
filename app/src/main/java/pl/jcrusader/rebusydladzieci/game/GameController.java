@@ -7,9 +7,9 @@ import android.graphics.Bitmap;
  */
 
 public interface GameController {
-    boolean checkAnswer(String userAnswer);
+    boolean submitAnswer(String userAnswer);
 
-    Bitmap giveRiddle();
+    Bitmap getCurrentRiddleImage();
 
-    boolean riddleAvailable(Integer riddleNumber);
+    boolean isRiddleAvailable(Integer riddleNumber);
 }

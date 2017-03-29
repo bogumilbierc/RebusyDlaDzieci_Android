@@ -52,7 +52,7 @@ public class TextViewAdapter extends BaseAdapter {
             textView = (CustomFontTextView) convertView;
         }
         textView.setText(String.format("%d", position + 1));
-        if (gameController.riddleAvailable(position + 1)) {
+        if (gameController.isRiddleAvailable(position + 1)) {
             textView.setTextColor(ColorStateList.valueOf(Color.GREEN));
         } else {
             textView.setTextColor(ColorStateList.valueOf(Color.RED));

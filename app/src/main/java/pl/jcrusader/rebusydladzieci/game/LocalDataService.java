@@ -5,9 +5,9 @@ package pl.jcrusader.rebusydladzieci.game;
  */
 
 public interface LocalDataService {
-    Integer getCurrentRiddleNumber();
+    Integer getHighestSolvedRiddleNumber();
 
-    void incrementCurrentRiddleNumber();
+    void incrementHighestSolvedRiddleNumber();
 
-    void resetRiddleNumber();
+    void resetHighestSolvedRiddleNumber();
 }
