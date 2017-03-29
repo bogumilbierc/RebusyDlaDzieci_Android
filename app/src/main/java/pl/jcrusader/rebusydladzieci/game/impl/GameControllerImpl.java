@@ -38,6 +38,7 @@ public class GameControllerImpl implements GameController {
         boolean isAnswerCorrect = userAnswer.equalsIgnoreCase(AnswersContainer.ANSWERS[currentRiddle]);
         if (isAnswerCorrect) {
             currentRiddle++;
+            checkIfCurrentRiddleIsHighestAndSaveIfSo();
         }
         return isAnswerCorrect;
     }
@@ -56,6 +57,12 @@ public class GameControllerImpl implements GameController {
     @Override
     public boolean isRiddleAvailable(Integer riddleNumber) {
         return localDataService.getHighestSolvedRiddleNumber() >= riddleNumber;
+    }
+
+    private void checkIfCurrentRiddleIsHighestAndSaveIfSo() {
+        if (currentRiddle > localDataService.getHighestSolvedRiddleNumber()) {
+            localDataService.incrementHighestSolvedRiddleNumber();
+        }
     }
 
 

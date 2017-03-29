@@ -30,7 +30,7 @@ public class LocalDataServiceImpl implements LocalDataService {
         Integer currentNumber = getHighestSolvedRiddleNumber();
         SharedPreferences sharedPreferences = getPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(RIDDLE_NUMBER_KEY, currentNumber++);
+        editor.putInt(RIDDLE_NUMBER_KEY, ++currentNumber);
         editor.commit();
     }
 

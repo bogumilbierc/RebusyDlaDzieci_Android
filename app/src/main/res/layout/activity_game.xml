@@ -7,14 +7,67 @@
     android:background="@drawable/bg"
     tools:context="pl.jcrusader.rebusydladzieci.GameActivity">
 
+    <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
+        android:id="@+id/correctAnswerTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text=":) \n gratulacje \n dotknij i lecimy dalej"
+        android:textColor="#00FF00"
+        android:textSize="35dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
+        android:id="@+id/inCorrectAnswerTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text=":( \n niestety - to nie to, ale bez obaw \n dotknij i lecimy jeszcze raz"
+        android:textColor="#FF0000"
+        android:textSize="35dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="192dp" />
+
+    <EditText
+        android:id="@+id/answerEt"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:hint="odpowiedź"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/checkAnswerTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
+        android:id="@+id/checkAnswerTv"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="sprawdzam"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
 
 </android.support.constraint.ConstraintLayout>

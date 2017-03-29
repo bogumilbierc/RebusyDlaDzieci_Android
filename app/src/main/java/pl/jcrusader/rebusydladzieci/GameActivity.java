@@ -3,16 +3,23 @@ package pl.jcrusader.rebusydladzieci;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import pl.jcrusader.rebusydladzieci.game.GameController;
 import pl.jcrusader.rebusydladzieci.game.impl.GameControllerImpl;
+import pl.jcrusader.rebusydladzieci.widget.CustomFontTextView;
 
 public class GameActivity extends AppCompatActivity {
 
     public static final String LEVEL_KEY = "pl.jcrusader.rebusydladzieci.LEVEL";
 
     private ImageView imageView;
+    private EditText answerEt;
+    private CustomFontTextView checkAnswerTv;
+    private CustomFontTextView correctAnswerTv;
+    private CustomFontTextView incorrectAnswerTv;
     private GameController gameController;
 
 
@@ -21,6 +28,35 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         imageView = (ImageView) findViewById(R.id.imageView);
+        checkAnswerTv = (CustomFontTextView) findViewById(R.id.checkAnswerTv);
+        answerEt = (EditText) findViewById(R.id.answerEt);
+        incorrectAnswerTv = (CustomFontTextView) findViewById(R.id.inCorrectAnswerTv);
+        correctAnswerTv = (CustomFontTextView) findViewById(R.id.correctAnswerTv);
+
+        checkAnswerTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitAnswer();
+            }
+        });
+
+        incorrectAnswerTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideAllControls();
+                showGameControls();
+            }
+        });
+
+        correctAnswerTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideAllControls();
+                showGameControls();
+                answerEt.setText("");
+                drawRiddle();
+            }
+        });
 
         initializeGameController();
         drawRiddle();
@@ -39,6 +75,47 @@ public class GameActivity extends AppCompatActivity {
 
     private void drawRiddle() {
         imageView.setImageBitmap(gameController.getCurrentRiddleImage());
+    }
+
+    private void submitAnswer() {
+        String userAnswer = answerEt.getText().toString();
+        if (gameController.submitAnswer(userAnswer)) {
+            handleCorrectAnswer();
+        } else {
+            handleWrongAnswer();
+        }
+    }
+
+    private void handleCorrectAnswer() {
+        hideAllControls();
+        showOkView();
+    }
+
+    private void handleWrongAnswer() {
+        hideAllControls();
+        showBadAnswerView();
+    }
+
+    private void hideAllControls() {
+        imageView.setVisibility(View.GONE);
+        answerEt.setVisibility(View.GONE);
+        checkAnswerTv.setVisibility(View.GONE);
+        correctAnswerTv.setVisibility(View.GONE);
+        incorrectAnswerTv.setVisibility(View.GONE);
+    }
+
+    private void showGameControls() {
+        imageView.setVisibility(View.VISIBLE);
+        answerEt.setVisibility(View.VISIBLE);
+        checkAnswerTv.setVisibility(View.VISIBLE);
+    }
+
+    private void showOkView() {
+        correctAnswerTv.setVisibility(View.VISIBLE);
+    }
+
+    private void showBadAnswerView() {
+        incorrectAnswerTv.setVisibility(View.VISIBLE);
     }
 
 
