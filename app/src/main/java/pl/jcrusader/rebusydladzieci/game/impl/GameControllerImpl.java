@@ -51,7 +51,7 @@ public class GameControllerImpl implements GameController {
         } catch (IOException e) {
             Log.e("Cannot open image", e.getMessage());
         }
-        return null; //todo: return error image
+        return null; //todo: return error image and update documentation
     }
 
     @Override
