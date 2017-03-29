@@ -12,6 +12,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private TextView levelTv;
     private TextView playTv;
+    private TextView optionsTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private void assignObjectsToViews() {
         levelTv = (CustomFontTextView) findViewById(R.id.levelsTextView);
         playTv = (CustomFontTextView) findViewById(R.id.playTextView);
+        optionsTv = (CustomFontTextView) findViewById(R.id.optionsTextView);
     }
 
     private void assignListeners() {
@@ -39,6 +41,13 @@ public class MainMenuActivity extends AppCompatActivity {
                 createAndStartActivity(GameActivity.class);
             }
         });
+        optionsTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAndStartActivity(OptionsActivity.class);
+            }
+        });
+
     }
 
     private void createAndStartActivity(Class<?> cls) {

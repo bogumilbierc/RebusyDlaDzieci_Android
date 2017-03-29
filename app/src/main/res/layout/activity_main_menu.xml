@@ -13,7 +13,7 @@
         android:id="@+id/playTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Graj"
+        android:text="@string/play"
         android:textAlignment="center"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="@id/mainConstraintLayout"
@@ -26,7 +26,7 @@
         android:id="@+id/levelsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Poziomy"
+        android:text="@string/levels"
         android:textAlignment="center"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="@id/mainConstraintLayout"
@@ -36,10 +36,10 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <pl.jcrusader.rebusydladzieci.widget.CustomFontTextView
-        android:id="@+id/aboutTextView"
+        android:id="@+id/optionsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Info"
+        android:text="@string/options"
         android:textAlignment="center"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="@id/mainConstraintLayout"

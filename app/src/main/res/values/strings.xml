@@ -4,4 +4,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="preference_file_key">pl.jcrusader.rebusydladzieci.QUOTE_PREFERENCES</string>
+    <string name="options">Opcje</string>
+    <string name="levels">Poziomy</string>
+    <string name="play">Graj</string>
 </resources>
